@@ -1,0 +1,22 @@
+.footer {
+   background: rgba(0, 0, 0, 0.9);
+   margin-top: -15px;
+   // .footer__container
+
+   &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+   }
+
+   // .footer__text
+
+   &__text {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      @include adaptive-value("padding-top", 40, 20, 1);
+      @include adaptive-value("padding-bottom", 40, 20, 1);
+   }
+}
+

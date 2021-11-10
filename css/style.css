@@ -1812,6 +1812,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   margin-bottom: calc(30px + 52 * ((100vw - 320px) / 1120));
 }
 
+.main-block__button {
+  pointer-events: auto;
+}
+
 .main-block__arrow {
   align-self: center;
   position: relative;

@@ -15,6 +15,7 @@ function setScrollTo() {
             top: document.querySelector('.book').getBoundingClientRect().top + scrollY,
 				behavior: "smooth"
 			});
+         e.preventDefault();
 }
 // Меню Бургер
 const iconMenu = document.querySelector('.icon-menu');

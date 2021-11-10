@@ -1554,6 +1554,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .btn {
+  z-index: 55;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1890,6 +1891,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   display: grid;
   grid-auto-flow: row;
   gap: 20px;
+}
+
+.social__item {
+  z-index: 55;
 }
 
 .social__item::before {
@@ -2738,7 +2743,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     transition: top 0.3s ease 0s;
     overflow: auto;
     text-align: center;
-    padding: 175px 30px 30px;
+    padding: 190px 30px 30px;
     background-color: #181813;
   }
 

@@ -1777,6 +1777,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   margin-bottom: calc(30px + 36 * ((100vw - 320px) / 1120));
 }
 
+.main-block__text:after {
+  content: " ";
+  position: absolute;
+  width: 60px;
+  height: 5px;
+  bottom: calc(-15px + -15 * ((100vw - 320px) / 1120));
+  left: 50%;
+  background-color: #fff;
+  background: #E8C300;
+  border-radius: 50px;
+  margin: 0 0 0 -30px;
+}
+
 .main-block__subtitle {
   font-weight: bold;
   font-size: 12px;

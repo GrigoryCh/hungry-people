@@ -1554,7 +1554,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .btn {
-  z-index: 55;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1813,7 +1812,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .main-block__button {
-  pointer-events: auto;
+  z-index: 55;
 }
 
 .main-block__arrow {

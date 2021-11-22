@@ -5,7 +5,41 @@
 	z-index: 50;
 	left: 0;
 	top: 0;
-  
+   &._scroll {
+		.header__wrapper {
+			background-color: #181813;
+		}
+      .header__logo {
+         margin-top: 15px;
+           @media (max-width: $md3+px) {
+              margin-top: 0px;
+              padding: 10px 0;
+           }
+         img {
+            width: 75px;
+            height: 75px;
+         }
+      }
+      .menu__body {
+           @media (max-width: $md3+px) {
+            padding: 100px 30px 30px;
+            &:before {
+               height: 95px;
+            }
+         }
+      }
+	}
+
+     // .header__wrapper
+
+   &__wrapper {
+      transition: background-color 0.3s ease 0s;
+      position: fixed; //Прилипающая шапка!!!
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 50;
+   }
    // .header__body
 
    &__body {
@@ -17,13 +51,12 @@
    // .header__logo
 
    &__logo {
-    //  @media (max-width: $md3+px) { 
-          position: relative;
-  //    }
+      position: relative;
       display: inline-block;
       margin: 24px 0 0 0;
       @include adaptive-value("margin-top", 24, 15, 1);
       z-index: 20;
+     
    }
 }
 
@@ -109,13 +142,13 @@
    }
 
    &__body {
+      transition: top 0.3s ease 0s;
       @media (max-width: $md3+px) {
          position: fixed;
          width: 100%;
          height: 100%;
          top: -100%; // Скрыть меню
          left: 0;
-         transition: top 0.3s ease 0s;
          overflow: auto;
          text-align: center;
          padding: 190px 30px 30px;
@@ -154,7 +187,7 @@
 	display: block;
    background-color: inherit;
 	position: absolute;
-   top: 54px;
+   top: 34px;
 	right: 20px;
 	width: 30px;
 	height: 18px;

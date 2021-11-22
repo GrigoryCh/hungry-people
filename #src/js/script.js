@@ -39,8 +39,8 @@ if (menuLinks.length > 0){/*Если есть проходим по их спи�
 		/*Проверить заполнен ли data-goto атрибут и существует ли объект, на который он ссылается */
 		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)){
 			const gotoBlock = document.querySelector(menuLink.dataset.goto);
-			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY;
-			//- document.querySelector('header').offsetHeight; должна быть высота шапки, но ее здесь нет
+			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('.header__wrapper').offsetHeight;
+         // должна быть высота шапки, но ее здесь нет
 			// так как main-block фулл скриновый				
 			//gotoBlock.getBoundingClientRect().top это Y-координата блока относительно окна браузера
 			//pageYOffset это количество прокрученных пикселей
@@ -67,8 +67,7 @@ if (menuLinks.length > 0){/*Если есть проходим по их спи�
 
 var scrollPosition = 0;
 document.addEventListener('scroll', function(){
-var scrollPosition = 0 - scrollY/8.5;
-  console.log(scrollPosition);
+var scrollPosition = 0 - scrollY/2;
   document.querySelector('.main-block__image').style.transform = 'translateY('+scrollPosition+'px)';
 });
 
@@ -91,6 +90,21 @@ let _ibg=document.querySelectorAll("._ibg"); for (var i = 0; i < _ibg.length; i+
 
 _ibg();
 
+//====================================================================================================================
+window.onload = function () {
+   // Добавление класса _scroll к классу header при скролле
+ const headerElement = document.querySelector('.header');
+
+ const callback = function (entries, observer) {
+    if(entries[0].isIntersecting) {
+       headerElement.classList.remove('_scroll');
+    } else { 
+       headerElement.classList.add('_scroll');
+    } 
+ };	
+ const headerObserver = new IntersectionObserver(callback);
+ headerObserver.observe(headerElement);
+}
 
 
 //====================================================================================================================

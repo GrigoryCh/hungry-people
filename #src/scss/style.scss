@@ -10,13 +10,13 @@
 // <Адаптивное свойство>
 @mixin adaptive-value($property, $startSize, $minSize, $type) {
    $addSize: $startSize - $minSize;
-   @if type==1 {
+   @if $type==1 {
       // Только если меньше контейнера
       #{$property}: $startSize + px;
       @media (max-width: #{$maxWidthContainer + px}) {
          #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
       }
-   } @else if type==2 {
+   } @else if $type==2 {
       // Только если больше контейнера
       #{$property}: $startSize + px;
       @media (min-width: #{$maxWidthContainer + px}) {
@@ -284,12 +284,13 @@ body
 
 .main-block {
    min-height: 100vh; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!FullScreen
-	position: relative;
+	overflow: hidden;
+   position: relative;
    display: flex; // Делаем главный блок флекс контейнером
    align-items: center;// Выравниваем содержимое по центру по двум осям
-   padding-bottom: 20px;//Отступ снизу
+   padding-bottom: 40px;//Отступ снизу
    @include adaptive-value("padding-top", 200, 180, 1);
-   @include adaptive-value("margin-bottom", 115, 65, 1);
+
    // .main-block__content
 
    &__content {
